@@ -1,77 +1,45 @@
 {
-  "name": "react-simple-verify",
-  "version": "1.0.0",
-  "description": "React简易滑动组件",
-  "main": "dist/react-simple-verify.js",
-  "homepage": "https://github.com/guqingming/react-simple-verify.git",
+  "name": "react-mati",
+  "version": "0.0.2",
+  "description": "React component to display the Mati button. Mati allows you to verify users identity online.",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "jsnext:main": "dist/index.esm.js",
+  "umd": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
-    "dev": "react-scripts start",
-    "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.conf.js --progress"
+    "build": "rollup -c",
+    "prepublish": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "types": "dist/vue-simple-verify.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/guqingming/react-simple-verify.git"
+    "url": "git+https://github.com/svengau/react-mati.git"
   },
   "keywords": [
     "react",
-    "verify"
+    "mati"
   ],
-  "author": "Gu Qingming <15524261@qq.com>",
-  "license": "ISC",
+  "author": "Sven Gaubert",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/guqingming/react-simple-verify/issues"
+    "url": "https://github.com/svengau/react-mati/issues"
   },
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    "typescript": "~3.7.2",
-    "core-js": "^3.5.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0"
+  "homepage": "https://github.com/svengau/react-mati#readme",
+  "peerDependencies": {
+    "react": ">=16.3.0",
+    "react-dom": ">=16.3.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.0",
-    "@babel/plugin-transform-runtime": "^7.4.0",
-    "@babel/preset-env": "^7.4.2",
-    "@babel/runtime": "^7.4.2",
-    "autoprefixer": "^9.4.7",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-loader": "^8.0.5",
-    "bundlewatch": "^0.2.5",
-    "chokidar": "^2.1.5",
-    "coveralls": "^3.0.2",
-    "cross-env": "^5.2.0",
-    "css-loader": "^2.1.0",
-    "cssnano": "^4.1.10",
-    "eject": "^0.0.4",
-    "file-loader": "^5.0.2",
-    "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.2.0",
-    "image-webpack-loader": "^6.0.0",
-    "jest": "^24.1.0",
-    "jest-serializer-vue": "^2.0.2",
-    "jest-transform-stub": "^2.0.0",
-    "mini-css-extract-plugin": "^0.5.0",
-    "node-sass": "^4.12.0",
-    "postcss-loader": "^3.0.0",
-    "postcss-scss": "^2.0.0",
-    "sass-loader": "^7.1.0",
-    "terser-webpack-plugin": "^1.2.3",
-    "ts-loader": "^6.2.1",
-    "url-loader": "^1.1.2",
-    "webpack": "4.41.2",
-    "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "3.9.0",
-    "webpack-merge": "^4.2.1"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "@types/react": "^16.7.22",
+    "@types/react-dom": "^16.0.11",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "rollup": "^1.1.2",
+    "rollup-plugin-typescript2": "^0.19.2",
+    "typescript": "^3.2.4"
   }
 }
