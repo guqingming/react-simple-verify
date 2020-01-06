@@ -3,8 +3,8 @@
 ## 简易滑动验证之react组件
 
 - **[作者邮箱：15524261@qq.com](mailto:15524261@qq.com)**
-- **[github项目地址：https://github.com/guqingming/vue-simple-verify](https://github.com/guqingming/react-simple-verify)**
-- **[码云项目地址：https://gitee.com/mycssweb/vue-simple-verify](https://gitee.com/mycssweb/react-simple-verify)**
+- **[github项目地址：https://github.com/guqingming/react-simple-verify](https://github.com/guqingming/react-simple-verify)**
+- **[码云项目地址：https://gitee.com/mycssweb/react-simple-verify](https://gitee.com/mycssweb/react-simple-verify)**
 
 ## 截图
 
@@ -18,7 +18,7 @@
 $ npm install react-simple-verify
 ```
 
-注册组件
+## 注册组件
 
 ```js
 import React from 'react'
@@ -26,13 +26,13 @@ import ReactSimpleVerify from 'react-simple-verify'
 import 'react-simple-verify/dist/react-simple-verify.css'
 ```
 
-使用组件
+## 使用组件
 
 ```jsx
 <ReactSimpleVerify ref="verify" success={ this.success.bind(this) }/>
 ```
 
-重置状态方法
+## 重置状态方法
 ```js
 /**
  * 重置
