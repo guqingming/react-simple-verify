@@ -1,6 +1,8 @@
 import React from 'react'
 import './App.css'
-import ReactSimpleVerify, { ReactSimpleVerifyFun } from '../src/components/ReactSimpleVerify'
+// import ReactSimpleVerify, { ReactSimpleVerifyFun } from '../src/components/ReactSimpleVerify'
+
+import ReactSimpleVerify from 'react-simple-verify'
 
 interface AppProps {}
 

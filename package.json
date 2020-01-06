@@ -1,12 +1,12 @@
 {
   "name": "react-simple-verify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React简易滑动验证组件",
   "main": "dist/vue-simple-verify.cjs.js",
   "module": "dist/vue-simple-verify.esm.js",
   "jsnext:main": "dist/vue-simple-verify.esm.js",
   "umd": "dist/vue-simple-verify.umd.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/react-simple-verify.d.ts",
   "files": [
     "dist/"
   ],
@@ -94,6 +94,7 @@
     "react-app-polyfill": "^1.0.5",
     "react-dev-utils": "^10.0.0",
     "react-dom": "^16.12.0",
+    "react-simple-verify": "^1.0.0",
     "resolve": "1.12.2",
     "resolve-url-loader": "3.1.1",
     "sass-loader": "8.0.0",

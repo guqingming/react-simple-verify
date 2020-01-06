@@ -6,18 +6,18 @@ export default {
   output: [
     {
       exports: 'named',
-      file: "dist/vue-simple-verify.umd.js",
+      file: "dist/react-simple-verify.umd.js",
       format: "umd",
       name: "ReactMati"
     },
     {
       exports: 'named',
-      file: "dist/vue-simple-verify.esm.js",
+      file: "dist/react-simple-verify.esm.js",
       format: "esm"
     },
     {
       exports: 'named',
-      file: "dist/vue-simple-verify.cjs.js",
+      file: "dist/react-simple-verify.cjs.js",
       format: "cjs"
     }
   ],
@@ -28,7 +28,7 @@ export default {
       abortOnError: false
     }),
     scss({
-      output: 'dist/vue-simple-verify.css'
+      output: 'dist/react-simple-verify.css'
     })
   ]
 };
