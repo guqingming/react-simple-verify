@@ -1,0 +1,8 @@
+*
+!src/**/*
+!dist/**/*
+.DS_Store
+dev/
+public/
+config/
+scripts/

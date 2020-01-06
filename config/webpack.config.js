@@ -1,4 +1,4 @@
-'use strict';
+
 
 const fs = require('fs');
 const path = require('path');
@@ -188,7 +188,7 @@ module.exports = function(webpackEnv) {
       devtoolModuleFilenameTemplate: isEnvProduction
         ? info =>
             path
-              .relative(paths.appSrc, info.absoluteResourcePath)
+              .relative(paths.appDev, info.absoluteResourcePath)
               .replace(/\\/g, '/')
         : isEnvDevelopment &&
           (info => path.resolve(info.absoluteResourcePath).replace(/\\/g, '/')),
@@ -306,12 +306,12 @@ module.exports = function(webpackEnv) {
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
         // guards against forgotten dependencies and such.
         PnpWebpackPlugin,
-        // Prevents users from importing files from outside of src/ (or node_modules/).
-        // This often causes confusion because we only process files within src/ with babel.
-        // To fix this, we prevent you from importing files out of src/ -- if you'd like to,
+        // Prevents users from importing files from outside of dev/ (or node_modules/).
+        // This often causes confusion because we only process files within dev/ with babel.
+        // To fix this, we prevent you from importing files out of dev/ -- if you'd like to,
         // please link the files into your node_modules/ and let module-resolution kick in.
         // Make sure your source files are compiled, as they will not be processed in any way.
-        new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson]),
+        // new ModuleScopePlugin(paths.appDev, [paths.appPackageJson]),
       ],
     },
     resolveLoader: {
@@ -344,7 +344,7 @@ module.exports = function(webpackEnv) {
               loader: require.resolve('eslint-loader'),
             },
           ],
-          include: paths.appSrc,
+          include: paths.appDev,
         },
         {
           // "oneOf" will traverse all following loaders until one will
@@ -362,11 +362,19 @@ module.exports = function(webpackEnv) {
                 name: 'static/media/[name].[hash:8].[ext]',
               },
             },
+            {
+              test: /\.(ts|tsx)$/,
+              include: [
+                paths.appDev,
+                paths.appSrc
+              ],
+              loader: require.resolve('ts-loader')
+            },
             // Process application JS with Babel.
             // The preset includes JSX, Flow, TypeScript, and some ESnext features.
             {
               test: /\.(js|mjs|jsx|ts|tsx)$/,
-              include: paths.appSrc,
+              include: paths.appDev,
               loader: require.resolve('babel-loader'),
               options: {
                 customize: require.resolve(
@@ -646,8 +654,8 @@ module.exports = function(webpackEnv) {
             '**',
             '!**/__tests__/**',
             '!**/?(*.)(spec|test).*',
-            '!**/src/setupProxy.*',
-            '!**/src/setupTests.*',
+            '!**/dev/setupProxy.*',
+            '!**/dev/setupTests.*',
           ],
           silent: true,
           // The formatter is invoked directly in WebpackDevServerUtils during development

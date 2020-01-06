@@ -1,22 +1,23 @@
 import typescript from "rollup-plugin-typescript2";
+import scss from 'rollup-plugin-scss';
 
 export default {
   input: "src/index.tsx",
   output: [
     {
       exports: 'named',
-      file: "dist/index.umd.js",
+      file: "dist/vue-simple-verify.umd.js",
       format: "umd",
       name: "ReactMati"
     },
     {
       exports: 'named',
-      file: "dist/index.esm.js",
+      file: "dist/vue-simple-verify.esm.js",
       format: "esm"
     },
     {
       exports: 'named',
-      file: "dist/index.cjs.js",
+      file: "dist/vue-simple-verify.cjs.js",
       format: "cjs"
     }
   ],
@@ -25,6 +26,9 @@ export default {
     typescript({
       typescript: require("typescript"),
       abortOnError: false
+    }),
+    scss({
+      output: 'dist/vue-simple-verify.css'
     })
   ]
 };
