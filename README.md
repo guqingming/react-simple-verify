@@ -23,13 +23,27 @@ $ npm install react-simple-verify
 ```js
 import React from 'react'
 import ReactSimpleVerify from 'react-simple-verify'
-import '../node_modules/react-simple-verify/dist/react-simple-verify.css'
+import 'react-simple-verify/dist/react-simple-verify.css'
 ```
 
 使用组件
 
 ```jsx
 <ReactSimpleVerify ref="verify" success={ this.success.bind(this) }/>
+```
+
+重置状态方法
+```js
+/**
+ * 重置
+ */
+private reset() {
+  const $verify = this.refs.verify as ReactSimpleVerify
+  $verify.reset()
+  this.setState({
+    isPass: false
+  })
+}
 ```
 
 参数说明

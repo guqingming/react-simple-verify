@@ -3,6 +3,7 @@ import './App.css'
 // import ReactSimpleVerify, { ReactSimpleVerifyFun } from '../src/components/ReactSimpleVerify'
 
 import ReactSimpleVerify from 'react-simple-verify'
+import 'react-simple-verify/dist/react-simple-verify.css'
 
 interface AppProps {}
 
@@ -32,7 +33,7 @@ export default class App extends React.Component<AppProps, AppState> {
    */
   private reset() {
     // const $verify = this.refs.verify as ReactSimpleVerifyFun
-    const $verify = this.refs.verify as any
+    const $verify = this.refs.verify as ReactSimpleVerify
     $verify.reset()
     this.setState({
       isPass: false
