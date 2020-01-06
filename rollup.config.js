@@ -6,19 +6,10 @@ export default {
   output: [
     {
       exports: 'named',
-      file: "dist/react-simple-verify.umd.js",
+      file: "dist/react-simple-verify.js",
       format: "umd",
-      name: "ReactMati"
-    },
-    {
-      exports: 'named',
-      file: "dist/react-simple-verify.esm.js",
-      format: "esm"
-    },
-    {
-      exports: 'named',
-      file: "dist/react-simple-verify.cjs.js",
-      format: "cjs"
+      name: "ReactSimpleVerify",
+      library: "ReactSimpleVerify"
     }
   ],
   external: ["react-load-script", "react"],
