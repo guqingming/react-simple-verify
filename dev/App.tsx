@@ -31,7 +31,8 @@ export default class App extends React.Component<AppProps, AppState> {
    * 重置
    */
   private reset() {
-    const $verify = this.refs.verify as ReactSimpleVerifyFun
+    // const $verify = this.refs.verify as ReactSimpleVerifyFun
+    const $verify = this.refs.verify as ReactSimpleVerify.SimpleVerify
     $verify.reset()
     this.setState({
       isPass: false
