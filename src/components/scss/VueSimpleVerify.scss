@@ -2,6 +2,7 @@
   box-sizing: border-box;
   line-height: 1;
   position: relative;
+  -webkit-user-select: none;
 
   .verify-tips {
     widows: 100%;

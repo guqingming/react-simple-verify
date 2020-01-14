@@ -22,10 +22,6 @@ interface ReactSimpleVerifyState {
   diff: number;
 }
 
-export interface ReactSimpleVerifyFun extends React.Component {
-  reset: () => void;
-}
-
 export default class ReactSimpleVerify extends React.Component<ReactSimpleVerifyProps, ReactSimpleVerifyState> {
   /**
    * 默认参数

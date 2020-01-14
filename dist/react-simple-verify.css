@@ -1,7 +1,8 @@
 .simple-verify {
   box-sizing: border-box;
   line-height: 1;
-  position: relative; }
+  position: relative;
+  -webkit-user-select: none; }
   .simple-verify .verify-tips {
     widows: 100%;
     height: 100%;
