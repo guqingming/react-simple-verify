@@ -48,6 +48,7 @@
     align-items: center;
     z-index: 1;
     transition: transform .3s ease;
+    touch-action: none;
 
     .icon {
       width: 44px;

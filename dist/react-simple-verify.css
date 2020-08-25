@@ -40,7 +40,8 @@
     justify-content: center;
     align-items: center;
     z-index: 1;
-    transition: transform .3s ease; }
+    transition: transform .3s ease;
+    touch-action: none; }
     .simple-verify .verify-bar .icon {
       width: 44px;
       height: 29px;

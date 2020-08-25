@@ -83,7 +83,9 @@ export default class ReactSimpleVerify extends React.Component<ReactSimpleVerify
    */
   public componentDidMount() {
     document.body.addEventListener('mousemove', this.mousemove.bind(this))
+    document.body.addEventListener('touchmove', this.mousemove.bind(this))
     document.body.addEventListener('mouseup', this.mouseup.bind(this))
+    document.body.addEventListener('touchend', this.mouseup.bind(this))
   }
 
   /**
@@ -91,7 +93,9 @@ export default class ReactSimpleVerify extends React.Component<ReactSimpleVerify
    */
   public componentWillUnmount() {
     document.body.removeEventListener('mousemove', this.mousemove.bind(this))
+    document.body.removeEventListener('touchmove', this.mousemove.bind(this))
     document.body.removeEventListener('mouseup', this.mouseup.bind(this))
+    document.body.removeEventListener('touchend', this.mouseup.bind(this))
   }
 
   /**
@@ -125,7 +129,7 @@ export default class ReactSimpleVerify extends React.Component<ReactSimpleVerify
     if (this.isSuccess) {
       return
     }
-    this.x1 = e.nativeEvent.x
+    this.x1 = e.nativeEvent.x || e.touches[0].clientX
     this.isMousedown = true
   }
 
@@ -138,7 +142,7 @@ export default class ReactSimpleVerify extends React.Component<ReactSimpleVerify
     }
     e.preventDefault()
     e.stopPropagation()
-    this.x2 = e.x
+    this.x2 = e.x || e.touches[0].clientX
     let diff = this.x2 - this.x1
     if (diff < 0) {
       diff = 0
@@ -213,8 +217,11 @@ export default class ReactSimpleVerify extends React.Component<ReactSimpleVerify
         <div
           className="verify-bar"
           onMouseEnter={ this.mouseenter.bind(this) }
+          onTouchStart={ this.mouseenter.bind(this) }
           onMouseLeave={ this.mouseleave.bind(this) }
+          onTouchEnd={ this.mouseleave.bind(this) }
           onMouseDown={ this.mousedown.bind(this) }
+          onTouchMove={ this.mousedown.bind(this) }
         >
           <div style={ barStyle } className="icon" />
         </div>
