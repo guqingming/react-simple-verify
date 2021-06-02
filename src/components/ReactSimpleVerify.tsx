@@ -65,7 +65,7 @@ export default class ReactSimpleVerify extends React.Component<ReactSimpleVerify
   }
   /** 成功图标 */
   private iconStyle = {
-    background: `url(${ successImage }) no-repeat`
+    background: `url(${ this.props.successIcon }) no-repeat`
   }
 
   constructor(props: ReactSimpleVerifyProps) {
