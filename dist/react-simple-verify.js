@@ -57,7 +57,7 @@
                 borderRadius: _this.props.borderRadius
             };
             _this.iconStyle = {
-                background: "url(" + successImage + ") no-repeat"
+                background: "url(" + _this.props.successIcon + ") no-repeat"
             };
             _this.state = {
                 isMouseEnter: false,
