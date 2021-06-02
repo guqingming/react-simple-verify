@@ -1,6 +1,6 @@
 {
   "name": "react-simple-verify",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "React简易滑动验证组件",
   "author": "Gu Qingming <15524261@qq.com>",
   "main": "dist/react-simple-verify.js",
