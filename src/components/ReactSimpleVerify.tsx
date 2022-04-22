@@ -68,6 +68,22 @@ export default class ReactSimpleVerify extends React.Component<ReactSimpleVerify
     background: `url(${ this.props.successIcon }) no-repeat`
   }
 
+  /**
+   * 重置
+   */
+   public reset = () => {
+    this.isSuccess = false
+    this.setState({
+      diff: 0
+    })
+    setTimeout(() => {
+      this.isMousedown = false
+      this.setState({
+        isMouseEnter: false
+      })
+    }, 0)
+  }
+
   constructor(props: ReactSimpleVerifyProps) {
     super(props)
     this.state = {
@@ -169,22 +185,6 @@ export default class ReactSimpleVerify extends React.Component<ReactSimpleVerify
       isMouseEnter: false,
       diff: 0
     })
-  }
-
-  /**
-   * 重置
-   */
-  public reset() {
-    this.isSuccess = false
-    this.setState({
-      diff: 0
-    })
-    setTimeout(() => {
-      this.isMousedown = false
-      this.setState({
-        isMouseEnter: false
-      })
-    }, 0)
   }
 
   public render() {
