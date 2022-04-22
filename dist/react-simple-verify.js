@@ -59,6 +59,18 @@
             _this.iconStyle = {
                 background: "url(" + _this.props.successIcon + ") no-repeat"
             };
+            _this.reset = function () {
+                _this.isSuccess = false;
+                _this.setState({
+                    diff: 0
+                });
+                setTimeout(function () {
+                    _this.isMousedown = false;
+                    _this.setState({
+                        isMouseEnter: false
+                    });
+                }, 0);
+            };
             _this.state = {
                 isMouseEnter: false,
                 diff: 0
@@ -129,19 +141,6 @@
                 isMouseEnter: false,
                 diff: 0
             });
-        };
-        ReactSimpleVerify.prototype.reset = function () {
-            var _this = this;
-            this.isSuccess = false;
-            this.setState({
-                diff: 0
-            });
-            setTimeout(function () {
-                _this.isMousedown = false;
-                _this.setState({
-                    isMouseEnter: false
-                });
-            }, 0);
         };
         ReactSimpleVerify.prototype.render = function () {
             var slideStyle = {
