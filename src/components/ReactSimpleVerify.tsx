@@ -142,7 +142,7 @@ export default class ReactSimpleVerify extends React.Component<ReactSimpleVerify
    * 鼠标按下
    */
   private mousedown(e: any) {
-    if (this.isSuccess) {
+    if (this.isSuccess || this.isMousedown) {
       return
     }
     this.x1 = e.nativeEvent.x || e.touches[0].clientX
