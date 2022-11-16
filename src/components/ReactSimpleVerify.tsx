@@ -180,10 +180,12 @@ export default class ReactSimpleVerify extends React.Component<ReactSimpleVerify
     if (this.isSuccess) {
       return
     }
+    const isMouseEnter = this.x2 - this.x1 < 50
+    this.x2 = 0
     this.isMousedown = false
     this.setState({
-      isMouseEnter: false,
-      diff: 0
+      isMouseEnter,
+      diff: 0,
     })
   }
 
